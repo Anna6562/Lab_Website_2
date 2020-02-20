@@ -12,7 +12,7 @@
 	<link href="../resources/css/my_style.css" rel="stylesheet">
   </head>
   <body>
-	
+
 	<img src="../resources/img/beproudcapaabanner.jpg" class="img-fluid" alt="Registration Page Banner for CU Football">
     <br>
 	<br>
@@ -72,7 +72,7 @@
 					  </label>
 					</div>
 					<div class="form-check">
-					  <input class="form-check-input" onclick="viewStudentStats('student_status', 0)" type="radio" name="studentStatus" id="studentStatusNo" value="No">
+					  <input class="form-check-input" onclick="viewStudentStats('student_status', 0);viewStudentStats('undergrad_select', 0);viewStudentStats('grad_select', 0);" type="radio" name="studentStatus" id="studentStatusNo" value="No">
 					  <label class="form-check-label" for="studentStatusNo">
 						No
 					  </label>
@@ -118,5 +118,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<script src="../resources/js/my_scripts.js"></script>
+  <script>
+    function viewStudentStats(id,toggle)
+    {
+      if (toggle == 0)
+      {
+          document.getElementById(id).style.visibility = "hidden";
+          document.getElementById(id).style.height = "0px";
+      }
+        else if (toggle == 1)
+          {
+            document.getElementById(id).style.visibility = "visible";
+            document.getElementById(id).style.height = "auto";
+
+          }
+    }
+  </script>
 </body>
 </html>

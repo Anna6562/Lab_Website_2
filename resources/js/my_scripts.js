@@ -161,16 +161,12 @@ function loadStatsPage()
 */
 function loadPlayersPage()
 {
-	
+	var droptext = "";
 	for (var playerNum = 0; playerNum < players.length; playerNum++)
 	{
-		var anchor = document.createElement('a');
-		anchor.href = "#";
-		anchor.onclick = switchPlayers(playerNum);
-		anchor.text = players[playerNum].name;
-		document.getElementById("player_selector").append(anchor);
-
+		droptext += '<a class = "dropdown-item" href = "#" onclick = "switchPlayers(' + playerNum + ')">' + players[playerNum].name + '</a>';
 	}
+	document.getElementById("player_selector").innerHTML = droptext;
 }
 function switchPlayers(playerNum)
 {
